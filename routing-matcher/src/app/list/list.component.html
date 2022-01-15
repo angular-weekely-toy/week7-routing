@@ -1,0 +1,23 @@
+<div class="home_header flex_btw">
+  <div class="breadcrumb">
+    <h2>
+      <a routerLink="/talk">talk</a>
+      <span *ngIf="category_path">
+        <i class="breadcrumb_arrow"></i>
+        <a routerLink="/talk/{{category_path}}">{{category_path}}</a>
+      </span>
+    </h2>
+  </div>
+
+  <p>카테고리</p>
+  <ul>
+    <li><a [routerLink]="['/talk/community']">community</a></li>
+    <li><a [routerLink]="['/talk/qna']">qna</a></li>
+  </ul>
+
+  <p>리스트</p>
+  <ul>
+    <li *ngFor="let item of list; let i = index">
+      <a [routerLink]="['./' + (i+1)]">{{i + 1}}</a>
+    </li>
+  </ul>
